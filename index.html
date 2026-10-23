@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shree Ram Grocery Store – Kosala, Odisha</title>
+<style>
+:root{--bg:#fff8ec;--card:#fff;--ink:#2b2a22;--mute:#6b6759;--sf:#e8761c;--gr:#1f5f3a;--line:#ecdfc6;--hd:#1f5f3a;--hdink:#fff8ec;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17190f;--card:#22251a;--ink:#f3ecd9;--mute:#b3ad98;--sf:#f08a35;--gr:#5fbf8a;--line:#3a3d2c;--hd:#12301f;--hdink:#fff3dc}}
+:root[data-theme="dark"]{--bg:#17190f;--card:#22251a;--ink:#f3ecd9;--mute:#b3ad98;--sf:#f08a35;--gr:#5fbf8a;--line:#3a3d2c;--hd:#12301f;--hdink:#fff3dc}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:inherit}
+header{position:sticky;top:0;z-index:5;background:var(--hd);color:var(--hdink);display:flex;align-items:center;justify-content:space-between;padding:10px 16px;gap:10px}
+header b{font-size:1.05rem}header nav{display:flex;gap:14px;font-size:.9rem}header nav a{text-decoration:none;opacity:.9}
+.hero{background:linear-gradient(135deg,var(--sf),#c8560a);color:#fff;padding:44px 18px 40px;text-align:center}
+.hero h1{margin:0 0 6px;font-size:clamp(1.8rem,6vw,2.8rem)}.hero p{margin:0 auto 20px;max-width:34ch;font-size:1.1rem}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;margin:4px;border:0;cursor:pointer;font-size:1rem}
+.wa{background:#25a244;color:#fff}.call{background:#fff;color:#1f5f3a}
+main{max-width:980px;margin:0 auto;padding:0 16px}
+section{padding:28px 0 8px}h2{color:var(--gr);margin:0 0 12px}
+.offers{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.offer{background:var(--card);border:2px dashed var(--sf);border-radius:14px;padding:14px}.offer b{color:var(--sf)}
+.tools{position:sticky;top:50px;z-index:4;background:var(--bg);padding:8px 0}
+#q{width:100%;padding:12px 16px;border-radius:999px;border:2px solid var(--line);background:var(--card);color:var(--ink);font-size:1rem}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:8px 0}
+.chip{white-space:nowrap;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.chip.on{background:var(--gr);color:#fff;border-color:var(--gr)}
+.grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+.item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:4px}
+.item small{color:var(--mute)}.price{color:var(--sf);font-weight:800}
+.item button{margin-top:6px;padding:8px;border-radius:10px;border:1px solid var(--gr);background:transparent;color:var(--gr);font-weight:700;cursor:pointer}
+.cart{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:6;display:none;background:#25a244;color:#fff;border-radius:999px;padding:12px 18px;text-align:center;font-weight:700;text-decoration:none;box-shadow:0 4px 14px #0004}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;line-height:1.8}
+footer{text-align:center;color:var(--mute);padding:28px 16px 90px;font-size:.9rem}
+</style>
+</head>
+<body>
+<header><b>🛒 Shree Ram Grocery</b><nav><a href="#offers">Offers</a><a href="#shop">Shop</a><a href="#contact">Contact</a></nav></header>
+
+<div class="hero">
+<h1>Shree Ram Grocery Store</h1>
+<p>Your Daily Needs, Quality Products, Affordable Prices</p>
+<a class="btn wa" href="https://wa.me/918328905988?text=Hello%20Shree%20Ram%20Grocery%2C%20I%20want%20to%20place%20an%20order." target="_blank" rel="noopener">Order on WhatsApp</a>
+<a class="btn call" href="tel:+918328905988">📞 Call 8328905988</a>
+</div>
+
+<main>
+<section id="offers"><h2>Special Offers</h2>
+<div class="offers">
+<div class="offer"><b>Monthly Ration Pack</b><br>Ask us for a combo price on rice, atta, dal, oil &amp; sugar.</div>
+<div class="offer"><b>Festival Treats</b><br>Chocolates, biscuits &amp; snacks for gifting and celebrations.</div>
+<div class="offer"><b>Easy WhatsApp Orders</b><br>Send your list on WhatsApp and we will get it ready.</div>
+</div></section>
+
+<section id="shop"><h2>Our Products</h2>
+<div class="tools"><input id="q" type="search" placeholder="Search products e.g. rice, soap, tea…" aria-label="Search products"><div class="chips" id="chips"></div></div>
+<div class="grid" id="grid"></div>
+<p id="none" style="display:none;color:var(--mute)">No product found. Ask us on WhatsApp – we may have it!</p>
+<p style="color:var(--mute);font-size:.85rem">Prices are approximate and may change. Please confirm at the shop or on WhatsApp.</p>
+</section>
+
+<section id="contact"><h2>Visit &amp; Contact</h2>
+<div class="box">
+📍 Shree Ram Grocery Store, Bahiali Sahi, Kosala, Odisha, India<br>
+🕖 Monday–Sunday, 7:00 AM – 9:00 PM<br>
+📞 <a href="tel:+918328905988">8328905988</a><br>
+💬 <a href="https://wa.me/918328905988" target="_blank" rel="noopener">WhatsApp 8328905988</a><br>
+✉️ <a href="mailto:dehurydipa80@gmail.com">dehurydipa80@gmail.com</a><br>
+<a class="btn call" style="background:var(--gr);color:#fff;margin-left:0" href="https://www.google.com/maps/search/?api=1&amp;query=Bahiali+Sahi+Kosala+Odisha" target="_blank" rel="noopener">Open in Maps</a>
+</div></section>
+</main>
+
+<footer>© Shree Ram Grocery Store · Bahiali Sahi, Kosala, Odisha</footer>
+<a class="cart" id="cart" target="_blank" rel="noopener"></a>
+
+<script>
+const P={
+"Chocolates & Candies":[["Dairy Milk (small)","20 g",10],["5 Star","22 g",10],["Eclairs Toffee","pack",20],["Assorted Candies","100 g",30]],
+"Chips & Namkeen":[["Kurkure Masala Munch","pack",20],["Lay's Classic","pack",20],["Aloo Bhujia","200 g",45],["Mixture Namkeen","200 g",40]],
+"Biscuits & Cookies":[["Parle-G","pack",10],["Good Day Butter","pack",30],["Marie Gold","pack",30],["Cream Biscuits","pack",20]],
+"Masala & Spices":[["Turmeric Powder","100 g",30],["Red Chilli Powder","100 g",40],["Jeera","100 g",55],["Garam Masala","50 g",45]],
+"Dal & Pulses":[["Toor Dal","1 kg",160],["Moong Dal","1 kg",130],["Chana Dal","1 kg",95],["Masoor Dal","1 kg",95]],
+"Rice, Atta & Flour":[["Rice","1 kg",50],["Atta","1 kg",45],["Maida","1 kg",45],["Suji","1 kg",50]],
+"Sugar & Salt":[["Sugar","1 kg",48],["Iodised Salt","1 kg",25],["Jaggery (Gud)","500 g",40]],
+"Soap & Shampoo":[["Bath Soap","pack",35],["Shampoo Sachet","pack",2],["Shampoo Bottle","180 ml",120],["Toothpaste","100 g",60]],
+"Detergent & Dishwash":[["Washing Powder","1 kg",110],["Detergent Bar","pack",20],["Dishwash Bar","pack",15],["Dishwash Liquid","500 ml",95]],
+"Oil & Ghee":[["Mustard Oil","1 L",170],["Refined Oil","1 L",140],["Ghee","500 ml",330]],
+"Tea & Coffee":[["Tea Powder","250 g",110],["Instant Coffee","50 g",150],["Coffee Sachet","pack",5]],
+"Drinks & Water":[["Cold Drink","600 ml",40],["Cold Drink","1.25 L",70],["Packaged Water","1 L",20]],
+"Household Essentials":[["Matchbox","pack",2],["Candle","pack",10],["Phenyl","500 ml",60],["Agarbatti","pack",10]]
+};
+const items=[];for(const c in P)P[c].forEach(([n,u,p])=>items.push({c,n,u,p}));
+let cat="All",cart={};
+const $=id=>document.getElementById(id);
+function chips(){const cs=["All",...Object.keys(P)];$("chips").innerHTML=cs.map(c=>`<button class="chip${c===cat?" on":""}" data-c="${c}">${c}</button>`).join("")}
+function render(){const q=$("q").value.trim().toLowerCase();
+const l=items.filter(i=>(cat==="All"||i.c===cat)&&(i.n+" "+i.c).toLowerCase().includes(q));
+$("grid").innerHTML=l.map(i=>{const k=items.indexOf(i);return `<div class="item"><b>${i.n}</b><small>${i.u}</small><span class="price">₹${i.p}</span><button data-k="${k}">+ Add${cart[k]?" ("+cart[k]+")":""}</button></div>`}).join("");
+$("none").style.display=l.length?"none":"block"}
+function upd(){const ks=Object.keys(cart);const a=$("cart");if(!ks.length){a.style.display="none";return}
+let t=0,s="Hello Shree Ram Grocery, I want to order:\n";ks.forEach(k=>{const i=items[k];t+=i.p*cart[k];s+=`- ${i.n} (${i.u}) x ${cart[k]}\n`});
+s+=`Approx total: ₹${t}`;a.href="https://wa.me/918328905988?text="+encodeURIComponent(s);
+a.textContent=`Send order on WhatsApp · ${ks.length} item${ks.length>1?"s":""} · ₹${t}`;a.style.display="block"}
+$("chips").onclick=e=>{if(e.target.dataset.c){cat=e.target.dataset.c;chips();render()}};
+$("grid").onclick=e=>{const k=e.target.dataset.k;if(k!==undefined){cart[k]=(cart[k]||0)+1;render();upd()}};
+$("q").oninput=render;chips();render();
+</script>
+</body>
+</html>
